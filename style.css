@@ -7,16 +7,48 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
   align-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+.title {
+  font-family: monospace;
+  font-size: 3em;
+  color: white;
+  /* animation-name: color-title;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+}
+
+.score {
+  font-family: monospace;
+  font-size: 2.5em;
+  color: white;
+}
+
+/* @keyframes color-title {
+  25% {
+    color: #b92d2d;
+  }
+  50% {
+    color: #d2d428;
+  }
+  75% {
+    color: #2d46b9;
+  }
+  100% {
+    color: #2db934;
+  }
+} */
+
 .genius {
   display: grid;
   grid-template-areas:
     "green-area red-area"
     "yellow-area blue-area";
   gap: 10px;
-  border: 10px solid #0000;
+  border: 10px solid rgba(0, 0, 0, 0);
   background-color: #ffff;
   border-radius: 100%;
   width: 700px;
@@ -24,12 +56,45 @@ body {
   -webkit-box-shadow: 7px 7px 11px 1px rgba(0, 0, 0, 0.66);
   box-shadow: 7px 7px 11px 1px rgba(0, 0, 0, 0.66);
 }
+.start {
+  margin-top: 50px;
+  padding: 20px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2em;
+  border: none;
+  outline: none;
+}
+
+.start:hover {
+  animation-name: color-start;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes color-start {
+  25% {
+    background-color: #b92d2d;
+  }
+  50% {
+    background-color: #d2d428;
+  }
+  75% {
+    background-color: #2d46b9;
+  }
+  100% {
+    background-color: #2db934;
+  }
+}
 
 .blue-button {
   grid-area: blue-area;
   background-color: #2d46b9;
   border-bottom-right-radius: 100%;
   border-top-left-radius: 5%;
+  border-top-right-radius: 2%;
+  border-bottom-left-radius: 2%;
 }
 
 .red-button {
@@ -37,6 +102,8 @@ body {
   background-color: #b92d2d;
   border-top-right-radius: 100%;
   border-bottom-left-radius: 5%;
+  border-top-left-radius: 2%;
+  border-bottom-right-radius: 2%;
 }
 
 .green-button {
@@ -44,6 +111,8 @@ body {
   background-color: #2db934;
   border-top-left-radius: 100%;
   border-bottom-right-radius: 5%;
+  border-top-right-radius: 2%;
+  border-bottom-left-radius: 2%;
 }
 
 .yellow-button {
@@ -51,4 +120,25 @@ body {
   background-color: #d2d428;
   border-bottom-left-radius: 100%;
   border-top-right-radius: 5%;
+  border-top-left-radius: 2%;
+  border-bottom-right-radius: 2%;
 }
+
+.blue-button,
+.red-button,
+.green-button,
+.yellow-button {
+  opacity: 0.3;
+}
+
+.selected {
+  opacity: 1;
+}
+
+/* .blue-button,
+.red-button,
+.green-button,
+.yellow-button {
+  -webkit-box-shadow: 7px 7px 11px 1px rgba(0, 0, 0, 0.66);
+  box-shadow: 7px 7px 11px 1px rgba(0, 0, 0, 0.66);
+} */
